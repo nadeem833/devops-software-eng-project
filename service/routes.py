@@ -8,7 +8,10 @@ from flask import jsonify, request, make_response, abort, url_for   # noqa; F401
 from service.models import Account
 from service.common import status  # HTTP Status Codes
 from . import app  # Import Flask application
+<<<<<<< HEAD
 import json
+=======
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 
 ############################################################
@@ -16,9 +19,13 @@ import json
 ############################################################
 @app.route("/health")
 def health():
+<<<<<<< HEAD
     """
     Health Status
     """
+=======
+    """Health Status"""
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
     return jsonify(dict(status="OK")), status.HTTP_200_OK
 
 
@@ -27,9 +34,13 @@ def health():
 ######################################################################
 @app.route("/")
 def index():
+<<<<<<< HEAD
     """
     Root URL response
     """
+=======
+    """Root URL response"""
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
     return (
         jsonify(
             name="Account REST API Service",
@@ -62,6 +73,7 @@ def create_accounts():
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
+<<<<<<< HEAD
 
 ######################################################################
 # LIST ALL ACCOUNTS
@@ -78,11 +90,19 @@ def list_accounts():
     return make_response(
         json.dumps(accounts, default=str), status.HTTP_200_OK
     )
+=======
+######################################################################
+# LIST ALL ACCOUNTS
+######################################################################
+
+# ... place you code here to LIST accounts ...
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 
 ######################################################################
 # READ AN ACCOUNT
 ######################################################################
+<<<<<<< HEAD
 @app.route("/accounts/<int:account_id>", methods=["GET"])
 def get_accounts(account_id):
     """
@@ -94,11 +114,16 @@ def get_accounts(account_id):
     if not account:
         abort(status.HTTP_404_NOT_FOUND, f"Account with id [{account_id}] could not be found.")
     return account.serialize(), status.HTTP_200_OK
+=======
+
+# ... place you code here to READ an account ...
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
+<<<<<<< HEAD
 @app.route("/accounts/<int:account_id>", methods=["PUT"])
 def update_accounts(account_id):
     """
@@ -112,11 +137,16 @@ def update_accounts(account_id):
     account.deserialize(request.get_json())
     account.update()
     return account.serialize(), status.HTTP_200_OK
+=======
+
+# ... place you code here to UPDATE an account ...
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 
 ######################################################################
 # DELETE AN ACCOUNT
 ######################################################################
+<<<<<<< HEAD
 @app.route("/accounts/<int:account_id>", methods=["DELETE"])
 def delete_account(account_id):
     """
@@ -128,15 +158,26 @@ def delete_account(account_id):
     if account:
         account.delete()
     return "", status.HTTP_204_NO_CONTENT
+=======
+
+# ... place you code here to DELETE an account ...
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 
 ######################################################################
 #  U T I L I T Y   F U N C T I O N S
 ######################################################################
+<<<<<<< HEAD
 def check_content_type(media_type):
     """
     Checks that the media type is correct
     """
+=======
+
+
+def check_content_type(media_type):
+    """Checks that the media type is correct"""
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
     content_type = request.headers.get("Content-Type")
     if content_type and content_type == media_type:
         return

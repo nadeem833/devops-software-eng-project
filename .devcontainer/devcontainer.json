@@ -4,11 +4,19 @@
 	"dockerFile": "Dockerfile",
 	"context": "..",
 	"remoteUser": "theia",
+<<<<<<< HEAD
 	"workspaceFolder": "/project",
     "workspaceMount": "source=${localWorkspaceFolder},target=/home/project,type=bind,consistency=delegated",
     "runArgs": ["-h","theia", "--name", "capstone-project"],
     "remoteEnv": {
       "FLASK_ENV": "development"
+=======
+	"workspaceFolder": "/home/project",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/project,type=bind,consistency=delegated",
+    "runArgs": ["-h","theia", "--name", "capstone-project"],
+    "remoteEnv": {
+      "FLASK_DEBUG": "True"
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
     },
 	"extensions": [
 		"VisualStudioExptTeam.vscodeintellicode",

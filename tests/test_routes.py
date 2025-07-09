@@ -6,14 +6,20 @@ Test cases can be run with the following:
   coverage report -m
 """
 import os
+<<<<<<< HEAD
 import json
+=======
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 import logging
 from unittest import TestCase
 from tests.factories import AccountFactory
 from service.common import status  # HTTP Status Codes
 from service.models import db, Account, init_db
 from service.routes import app
+<<<<<<< HEAD
 from service import talisman
+=======
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 DATABASE_URI = os.getenv(
     "DATABASE_URI", "postgresql://postgres:postgres@localhost:5432/postgres"
@@ -21,8 +27,11 @@ DATABASE_URI = os.getenv(
 
 BASE_URL = "/accounts"
 
+<<<<<<< HEAD
 HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
 
+=======
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 ######################################################################
 #  T E S T   C A S E S
@@ -38,7 +47,10 @@ class TestAccountService(TestCase):
         app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
         app.logger.setLevel(logging.CRITICAL)
         init_db(app)
+<<<<<<< HEAD
         talisman.force_https = False
+=======
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
     @classmethod
     def tearDownClass(cls):
@@ -129,6 +141,7 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
 
     # ADD YOUR TEST CASES HERE ...
+<<<<<<< HEAD
 
     def test_read_an_account(self):
         """It should Read a single Account"""
@@ -228,3 +241,5 @@ class TestAccountService(TestCase):
         response = self.client.get('/', environ_overrides=HTTPS_ENVIRON)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
+=======
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a

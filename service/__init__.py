@@ -8,14 +8,20 @@ import sys
 from flask import Flask
 from service import config
 from service.common import log_handlers
+<<<<<<< HEAD
 from flask_talisman import Talisman
 from flask_cors import CORS
+=======
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 # Create Flask application
 app = Flask(__name__)
 app.config.from_object(config)
+<<<<<<< HEAD
 talisman = Talisman(app)
 CORS(app)
+=======
+>>>>>>> 1b50c88e08626c848688a42c96143d6b41d5eb1a
 
 # Import the routes After the Flask app is created
 # pylint: disable=wrong-import-position, cyclic-import, wrong-import-order
